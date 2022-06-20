@@ -209,6 +209,9 @@ the website, in dark theme
   z-index: 1000;
 }
 
+a {
+  color: var(--first-color-alt);
+}
 
 .errors span,
 .success span {

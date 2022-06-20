@@ -10,6 +10,10 @@ const añadir = document.querySelector( '#añadir' );
 const editar = document.querySelector( '#editar' );
 const calculator = document.querySelector( '#calculator' );
 const blog = document.querySelector( '#blog' );
+const articles1 = document.querySelector( '#articles1' );
+const articles2 = document.querySelector( '#articles2' );
+const articles3 = document.querySelector( '#articles3' );
+
 console.clear();
 
 const inicioComp = () => {
@@ -64,6 +68,9 @@ const registroComp = () => {
     editar.style.display = 'none';
     calculator.style.display = 'none';
     blog.style.display = 'none';
+    articles1.style.display = 'none';
+    articles2.style.display = 'none';
+    articles3.style.display = 'none';
     registroA.classList.add( 'active-link' );
     montoA.classList.remove( 'active-link' );
     añadirA.classList.remove( 'active-link' );
@@ -77,6 +84,9 @@ const montoComp = () => {
     editar.style.display = 'none';
     calculator.style.display = 'none';
     blog.style.display = 'none';
+    articles1.style.display = 'none';
+    articles2.style.display = 'none';
+    articles3.style.display = 'none';
     registroA.classList.remove( 'active-link' );
     montoA.classList.add( 'active-link' );
     añadirA.classList.remove( 'active-link' );
@@ -90,6 +100,9 @@ const añadirComp = () => {
     editar.style.display = 'none';
     calculator.style.display = 'none';
     blog.style.display = 'none';
+    articles1.style.display = 'none';
+    articles2.style.display = 'none';
+    articles3.style.display = 'none';
     registroA.classList.remove( 'active-link' );
     montoA.classList.remove( 'active-link' );
     añadirA.classList.add( 'active-link' );
@@ -103,6 +116,9 @@ const editarComp = () => {
     editar.style.display = '';
     calculator.style.display = 'none';
     blog.style.display = 'none';
+    articles1.style.display = 'none';
+    articles2.style.display = 'none';
+    articles3.style.display = 'none';
     registroA.classList.add( 'active-link' );
     montoA.classList.remove( 'active-link' );
     añadirA.classList.remove( 'active-link' );
@@ -116,6 +132,9 @@ const calculatorComp = () => {
     editar.style.display = 'none';
     calculator.style.display = '';
     blog.style.display = 'none';
+    articles1.style.display = 'none';
+    articles2.style.display = 'none';
+    articles3.style.display = 'none';
     registroA.classList.remove( 'active-link' );
     montoA.classList.remove( 'active-link' );
     añadirA.classList.remove( 'active-link' );
@@ -129,13 +148,63 @@ const blogComp = () => {
     editar.style.display = 'none';
     calculator.style.display = 'none';
     blog.style.display = '';
+    articles1.style.display = 'none';
+    articles2.style.display = 'none';
+    articles3.style.display = 'none';
     registroA.classList.remove( 'active-link' );
     montoA.classList.remove( 'active-link' );
     añadirA.classList.remove( 'active-link' );
     blogA.classList.add( 'active-link' );
-    title.innerHTML = 'Calculadora';
+    title.innerHTML = 'Blog';
 };
-
+const articles1Comp = () => {
+    registro.style.display = 'none';
+    monto.style.display = 'none';
+    añadir.style.display = 'none';
+    editar.style.display = 'none';
+    calculator.style.display = 'none';
+    blog.style.display = 'none';
+    articles1.style.display = '';
+    articles2.style.display = 'none';
+    articles3.style.display = 'none';
+    registroA.classList.remove( 'active-link' );
+    montoA.classList.remove( 'active-link' );
+    añadirA.classList.remove( 'active-link' );
+    blogA.classList.add( 'active-link' );
+    title.innerHTML = 'Blog';
+};
+const articles2Comp = () => {
+    registro.style.display = 'none';
+    monto.style.display = 'none';
+    añadir.style.display = 'none';
+    editar.style.display = 'none';
+    calculator.style.display = 'none';
+    blog.style.display = 'none';
+    articles1.style.display = 'none';
+    articles2.style.display = '';
+    articles3.style.display = 'none';
+    registroA.classList.remove( 'active-link' );
+    montoA.classList.remove( 'active-link' );
+    añadirA.classList.remove( 'active-link' );
+    blogA.classList.add( 'active-link' );
+    title.innerHTML = 'Blog';
+};
+const articles3Comp = () => {
+    registro.style.display = 'none';
+    monto.style.display = 'none';
+    añadir.style.display = 'none';
+    editar.style.display = 'none';
+    calculator.style.display = 'none';
+    blog.style.display = 'none';
+    articles1.style.display = 'none';
+    articles2.style.display = 'none';
+    articles3.style.display = '';
+    registroA.classList.remove( 'active-link' );
+    montoA.classList.remove( 'active-link' );
+    añadirA.classList.remove( 'active-link' );
+    blogA.classList.add( 'active-link' );
+    title.innerHTML = 'Blog';
+};
 
 const inicioA = document.querySelector( '#inicioA' );
 const nosotrosA = document.querySelector( '#nosotrosA' );
@@ -161,3 +230,13 @@ if ( registroA ) {
     calculatorA.addEventListener( 'click', () => calculatorComp() );
     blogA.addEventListener( 'click', () => blogComp() );
 };
+
+
+const article1A = document.querySelector( '#article1A' );
+const article2A = document.querySelector( '#article2A' );
+const article3A = document.querySelector( '#article3A' );
+
+article1A.addEventListener( 'click', () => articles1Comp() );
+article2A.addEventListener( 'click', () => articles2Comp() );
+article3A.addEventListener( 'click', () => articles3Comp() );
+

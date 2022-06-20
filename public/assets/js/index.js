@@ -1,5 +1,5 @@
 
-const url = 'http://localhost:3000';
+const url = 'https://finsoft.herokuapp.com';
 const errorsDiv = document.querySelector('#errors');
 const successDiv = document.querySelector('#success');
 
