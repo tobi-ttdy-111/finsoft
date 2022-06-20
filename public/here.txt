@@ -1,0 +1,63 @@
+Crear cuenta => { usuario, nombre, correo, contraseña y confirmacion de contraseña }
+Iniciar sesión => { usuario y contraseña }
+
+Crud de gastos e ingresos
+Gastos { monto, fecha, nombre };
+Ingresos { monto, fecha, nombre };
+
+A partir de montos e ingresos ( esta tabla / lista puede ser editada / eliminada )
+
+
+=> Ver saldo
+=> Semanalmente / quincenal y mensual
+
+Gasto total semanal / quincenal / mensual
+Ingreso ....
+
+
+
+Recuperar contraseña
+Cerrar sesión
+Chaptcha
+
+modulo de admin
+{ ver total de usuarios y eliminarlos }
+
+modulo de soporte
+{ chat  }
+
+
+inicio { s2.2 + s3
+
+    Tus ingresos / gastos
+    <semanal>...
+
+    01: Ingresos
+    + 3200
+
+    02: Gastos
+    - 1500
+
+    03: Total
+    + 1700
+
+
+    Registro
+    Aqui podrás ver todos los movimientos que hayas registrado, hacer tus propias cuentas y comenzar a controlar y analizar tus gastos
+
+}
+
+
+
+
+usuario
+post /usuario
+post /auth
+
+monto
+get /monto
+post /monto
+put /monto
+delete /monto
+
+

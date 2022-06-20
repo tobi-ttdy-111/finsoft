@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title id="title">Registro</title>
+</head>
+
+<body>
+
+    <div class="errors" style="display: none;" id="errors">
+    </div>
+
+    <div class="success" style="display: none;" id="success">
+    </div>
+
+    <!-- header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo" onclick="registroComp()">FINSOFT</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#" class="nav__link active-link" id="registroA">Registro</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link" id="montoA">Monto</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link" id="añadirA">Añadir</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link" id="blogA">Blog</a></li>
+                </ul>
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+
+            <div class="nav__btns">
+                <i class="ri-moon-line change-theme" id="theme-button"></i>
+                <i class="ri-calculator-line change-theme" id="calculatorA"></i>
+                <i class="ri-logout-box-r-line change-theme" id="cerrarSesion"></i>
+                <div class="nav__toggle" id="nav-toggle"><i class="ri-menu-line"></i></div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+
+        <section class="product section container" id="registro" style="margin-top: 3rem;">
+            <h2 class="section__title-center">
+                Registro
+            </h2>
+
+            <p class="product__description">
+                Aqui podrás ver todos los movimientos que hayas registrado, hacer tus propias cuentas y comenzar a
+                controlar y analizar tus gastos
+            </p>
+
+            <div class="product__container grid" id="montos"></div>
+
+        </section>
+
+        <section class="steps section container" id="monto" style="margin-top: 5rem; display: none;">
+            <div class="steps__bg">
+                <h2 class="section__title-center steps__title">
+                    Tus ingresos / gastos
+                </h2>
+
+                <select name="tiempoRegistro" id="registroTiempo">
+                    <option value="semana">Esta semana</option>
+                    <option value="quincena">Esta quincena</option>
+                    <option value="mes">Este mes</option>
+                </select>
+
+                <div class="steps__container grid">
+                    <div class="steps__card">
+                        <div class="steps__card-number">01</div>
+                        <h3 class="steps__card-title">Ingresos</h3>
+                        <p class="steps__card-description" id="ingresosRegDate">
+                            + $0
+                        </p>
+                    </div>
+
+                    <div class="steps__card">
+                        <div class="steps__card-number">02</div>
+                        <h3 class="steps__card-title">Gastos</h3>
+                        <p class="steps__card-description" id="gastosRegDate">
+                            - $0
+                        </p>
+                    </div>
+
+                    <div class="steps__card">
+                        <div class="steps__card-number">03</div>
+                        <h3 class="steps__card-title">Total</h3>
+                        <p class="steps__card-description" id="totalRegDate">
+                            + $0
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact section container" id="añadir" style="margin-top: 15vh; display: none;">
+            <div class="contact__container grid">
+                <div class="contact__box">
+                    <h2 class="section__title">
+                        Añadir
+                    </h2>
+
+                    <div class="contact__data">
+                        <div class="contact__information">
+                            <h3 class="contact__subtitle">Aqui puedes añadir nuevos ingresos / gastos</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <form action="" class="contact__form">
+                    <div class="contact__inputs">
+
+                        <div class="contact__content">
+                            <select name="" id="tipo">
+                                <option value="gasto">Gasto</option>
+                                <option value="ingreso">Ingreso</option>
+                            </select>
+                        </div>
+                        <div class="contact__content">
+                            <input type="number" placeholder=" " class="contact__input" id="montoVal">
+                            <label for="" class="contact__label">Monto</label>
+                        </div>
+                        <div class="contact__content" style="margin-top: .8rem;">
+                            <input type="date" placeholder="" value="fecha" class="contact__input"
+                                style="font-size: 13px; color: var(--text-color);" id="fecha">
+                            <label for="" class="contact__label" style="margin-top: .5rem;">Fecha</label>
+                        </div>
+                        <div class="contact__content">
+                            <input type="text" placeholder=" " class="contact__input" id="descripcion">
+                            <label for="" class="contact__label">Descripcion</label>
+                        </div>
+                    </div>
+
+                    <button class="button button--flex" id="añadirBtn">
+                        Añadir
+                        <i class="ri-arrow-right-up-line button__icon"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <section class="contact section container" id="editar" style="margin-top: 15vh; display: none;">
+            <div class="contact__container grid">
+                <div class="contact__box">
+                    <h2 class="section__title">
+                        Editar
+                    </h2>
+                </div>
+
+                <form action="" class="contact__form">
+                    <div class="contact__inputs">
+
+                        <div class="contact__content">
+                            <select name="" id="tipoE">
+                                <option value="gasto">Gasto</option>
+                                <option value="ingreso">Ingreso</option>
+                            </select>
+                        </div>
+                        <div class="contact__content">
+                            <input type="number" placeholder=" " class="contact__input" id="montoValE">
+                            <label for="" class="contact__label">Monto</label>
+                        </div>
+                        <div class="contact__content" style="margin-top: .8rem;">
+                            <input type="date" placeholder=" " class="contact__input"
+                                style="font-size: 13px; color: var(--text-color);" id="fechaE">
+                            <label for="" class="contact__label" style="margin-top: .5rem;">Fecha</label>
+                        </div>
+                        <div class="contact__content">
+                            <input type="text" placeholder=" " class="contact__input" id="descripcionE">
+                            <label for="" class="contact__label">Descripcion</label>
+                        </div>
+                    </div>
+
+                    <button class="button button--flex" id="editarBtn">
+                        Confirmar edición
+                        <i class="ri-arrow-right-up-line button__icon"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <section class="contact section container" id="calculator" style="margin-top: 15vh; display: none;">
+            <div class="contact__container grid">
+                <div class="contact__box">
+                    <h2 class="section__title">
+                        Calculadora
+                    </h2>
+                </div>
+
+                <form action="" class="contact__form">
+                    <div class="contact__inputs">
+
+                        <div class="contact__content">
+                            <select name="" id="selectMode">
+                                <option value="1">Calcular IVA ( al 8% )</option>
+                                <option value="2">Calcular IVA ( al 16% )</option>
+                                <!-- <option value="3">Calcular ISR ( quincenal )</option> -->
+                            </select>
+                        </div>
+                        <div class="contact__content">
+                            <input type="number" placeholder=" " id="montoUser" class="contact__input">
+                            <label for="" class="contact__label">Monto</label>
+                        </div>
+                    </div>
+
+                    <button id="calculate" class="button button--flex">
+                        Calcular
+                        <i class="ri-arrow-right-up-line button__icon"></i>
+                    </button>
+                    <br>
+                    <br>
+                    <small id="resultCalculator"></small>
+                </form>
+            </div>
+        </section>
+
+        <section class="about section container" id="blog" style="margin-top: 8vh; display: none; margin-bottom: 15vh;">
+            <div class="about__container grid">
+                <img src="assets/img/fullLogo.png" alt="" class="about__img">
+
+                <div class="about__data">
+                    <h2 class="section__title about__title">
+                        Elige tu nivel
+                    </h2>
+
+                    <p class="about__description">
+                        Para saber que temas son los más recomendables para tí, elige tu rango de edad.
+                        (Esto es solo una recomendación, podrás accesar a todo el contenido en cualquier momento)
+                    </p>
+
+                    <div class="about__details">
+                        <p class="about__details-description">
+                            <a href="#" target="_blank"><i class="ri-checkbox-fill about__details-icon"></i></a>
+                            De 12 a 15 años <br>Principiante en los términos básicos de la economía, sin la necesidad de usar ese dinero para subsistir.
+                        </p>
+                        <p class="about__details-description">
+                            <a href="#" target="_blank"><i class="ri-checkbox-fill about__details-icon"></i></a>
+                            De 15 a 17 años <br>
+                            Conocimientos básicos sobre economía, tales como ahorro.
+                        </p>
+                        <p class="about__details-description">
+                            <a href="#" target="_blank"><i class="ri-checkbox-fill about__details-icon"></i></a>
+                            18 o más años <br>Conocimiento moderado sobre impuestos, ahorros,inversiones, entre otros.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!--=============== SCROLL UP ===============-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-fill scrollup__icon"></i>
+    </a>
+
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/calculator.js"></script>
+    <script src="assets/js/index.js"></script>
+
+</body>
+
+</html>

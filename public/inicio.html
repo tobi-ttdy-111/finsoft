@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <title id="title">Inicio</title>
+    </head>
+    <body>
+
+        <div class="errors" style="display: none;" id="errors">
+        </div>
+
+        <div class="success" style="display: none;" id="success">
+        </div>
+
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo" onclick="inicioComp()">FINSOFT</a>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#" class="nav__link active-link" id="inicioA">Inicio</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link" id="nosotrosA">Nosotros</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link" id="registrarseA">Registrarse</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link" id="iniciarSesionA">Iniciar sesión</a></li>
+                    </ul>
+                    <div class="nav__close" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
+                </div>
+
+                <div class="nav__btns">
+                    <i class="ri-moon-line change-theme" id="theme-button"></i>
+                    <div class="nav__toggle" id="nav-toggle"><i class="ri-menu-line"></i></div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main">
+
+            <section class="home" id="inicio">
+                <div class="home__container container grid">
+                    <img src="assets/img/fullLogo.png" alt="" class="home__img">
+                    <div class="home__data">
+                        <h1 class="home__title">
+                            Bienvenido a FINSOFT
+                        </h1>
+                        <p class="home__description">
+                            Ponemos la Educación Financiera al alcance de todos, ayudandote a alcanzar tus metas con finanzas personales sanas.
+                        </p>
+                        <a href="#" class="button button--flex" onclick="registrarmeComp()">
+                            Comenzar <i class="ri-arrow-right-down-line button__icon"></i>
+                        </a>
+                    </div>
+
+                    <div class="home__social">
+                        <span class="home__social-follow">Siguenos</span>
+
+                        <div class="home__social-links">
+                            <a href="https://www.facebook.com/FINSOFT" target="_blank" class="home__social-link">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+                            <a href="https://www.instagram.com/finsoft8" target="_blank" class="home__social-link">
+                                <i class="ri-instagram-line"></i>
+                            </a>
+                            <a href="https://twitter.com/Finsoft" target="_blank" class="home__social-link">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about section container" id="nosotros" style="margin-top: 10vh; display: none;">
+                <div class="about__container grid">
+                    <section class="location">
+                        <iframe
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.036319484898!2d-99.1772493223631!3d19.454000845105273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cdffeaf6b0a85d%3A0xb6ad4ff925a0d906!2sCentro%20Estudios%20Cient%C3%ADficos%20y%20Tecnol%C3%B3gicos%20(CECyT%209)%20%22Juan%20de%20Dios%20B%C3%A1tiz%22!5e0!3m2!1ses-419!2smx!4v1637355390756!5m2!1ses-419!2smx"
+                          width="450px"
+                          height="450px"
+                          style="border: 0"
+                          allowfullscreen=""
+                          loading="lazy"
+                        ></iframe>
+                      </section>
+
+                    <div class="about__data">
+                        <h2 class="section__title about__title">
+                            ¿Quiénes somos?
+                        </h2>
+
+                        <p class="about__description">
+                            Comprometidos con las generaciones futuras del país
+                        </p>
+
+                        <div class="about__details">
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                Somos una empresa formada por 5 estudiantes mexicanos del IPN que estamos comprometidos 100% en brindar una mejor educación financiera.
+                            </p>
+                        </div>
+
+                        <a href="#" class="button--link button--flex" style="margin-bottom: 100px;">
+                            Contacto directo <i class="ri-arrow-right-down-line button__icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact section container" id="registrarme" style="margin-top: 10vh; display: none;">
+                <div class="contact__container grid">
+                    <div class="contact__box">
+                        <h2 class="section__title">
+                            Registrarse
+                        </h2>
+                        <div class="contact__data">
+                            <div class="contact__information">
+                                <h3 class="contact__subtitle">No dejes pasar un día mas, empieza con tu educación financiera hoy mismo</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form action="" class="contact__form">
+                        <div class="contact__inputs">
+
+                            <div class="contact__content">
+                                <input type="text" placeholder=" " class="contact__input" id="usuarioEtiqueta">
+                                <label for="" class="contact__label">Usuario</label>
+                            </div>
+                            <div class="contact__content">
+                                <input type="text" placeholder=" " class="contact__input" id="nombre">
+                                <label for="" class="contact__label">Nombre</label>
+                            </div>
+                            <div class="contact__content">
+                                <input type="email" placeholder=" " class="contact__input" id="correo">
+                                <label for="" class="contact__label">Correo</label>
+                            </div>
+                            <div class="contact__content">
+                                <input type="password" placeholder=" " class="contact__input" id="contraseña">
+                                <label for="" class="contact__label">Contraseña</label>
+                            </div>
+                            <div class="contact__content">
+                                <input type="password" placeholder=" " class="contact__input" id="confirmarContraseña">
+                                <label for="" class="contact__label">Confirmar contraseña</label>
+                            </div>
+
+                        </div>
+
+                        <button class="button button--flex" id="registrarse">
+                            Crear cuenta
+                            <i class="ri-arrow-right-up-line button__icon"></i>
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="contact section container" id="iniciarSesion" style="margin-top: 15vh; display: none;">
+                <div class="contact__container grid">
+                    <div class="contact__box">
+                        <h2 class="section__title">
+                            Iniciar sesión
+                        </h2>
+
+                        <div class="contact__data">
+                            <div class="contact__information">
+                                <h3 class="contact__subtitle">Que bueno que hayas decidido regresar</h3>
+                            </div>
+
+                            <div class="contact__information">
+                                <h3 class="contact__subtitle">Si no puedes iniciar sesión puedes <br> mandar un mensaje a soporte técnico</h3>
+                                <span class="contact__description">
+                                    <i class="ri-phone-line contact__icon"></i>
+                                    + 55-5105-6948
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form action="" class="contact__form">
+                        <div class="contact__inputs">
+
+                            <div class="contact__content">
+                                <input type="text" placeholder=" " class="contact__input" id="correoS">
+                                <label for="" class="contact__label">Correo</label>
+                            </div>
+                            <div class="contact__content">
+                                <input type="password" placeholder=" " class="contact__input" id="contraseñaS">
+                                <label for="" class="contact__label">Contraseña</label>
+                            </div>
+                        </div>
+
+                        <button class="button button--flex" id="iniSesion">
+                            Iniciar sesión
+                            <i class="ri-arrow-right-up-line button__icon"></i>
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+        </main>
+
+        <!--=============== SCROLL UP ===============-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-fill scrollup__icon"></i>
+        </a>
+
+        <script src="assets/js/scrollreveal.min.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/components.js"></script>
+        <script src="assets/js/inicio.js"></script>
+
+    </body>
+</html>
